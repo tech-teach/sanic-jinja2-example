@@ -1,4 +1,4 @@
-# sanic-todo-example
+# sanic-jinja2-example
 Simple todo implemented with sanic and jinja2
 
 # Quick tutorial
