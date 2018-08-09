@@ -3,14 +3,24 @@
     <title>your title here</title>
   </head>
   <body>
-    <ul>
       <form action="/">
         <input type="text" name="task">
-        <input type="submit">
+        <input style="width: 80px" type="submit" value="Crear">
       </form>
-      {% for taks in tasks %}
-        <li>{{ taks }}</li>
-      {% endfor %}
-    </ul>
+      <table border="1" width="200" height="20">
+        {% for taks in tasks %}
+        <tr>
+          <td width="120">{{ taks }}</td>
+          <td>
+            <form action="/task">
+              <input style="width: 80px" type="submit" value="Realizado" name="Realizado">
+            </form>
+            <form action="/task">
+              <input style="width: 80px" type="submit" value="Eliminar">
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
   </body>
 </html>
