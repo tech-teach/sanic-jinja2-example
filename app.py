@@ -9,11 +9,20 @@ txt_template = open("template.html").read()
 
 tasks = []
 
+#generador de id
+def numId():
+	i=0
+	while True:
+		yield i
+		i+=1
+
+nums=numId()
+
 @app.route('/', methods=["GET"])
 async def test(request):
     task = request.args.get('task')
     if task:
-        tasks.append(task)
+        tasks.append({str(next(nums)):task})
 
     template = Template(txt_template)
     html_template = template.render(tasks=tasks)
